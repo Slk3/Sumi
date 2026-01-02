@@ -3,20 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <title>sumi</title>
+
+  <!-- Fonte artística -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       height: 100vh;
+      background: #000;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #000;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
     }
+
     h1 {
       color: #fff;
       font-size: 6rem;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: normal;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      opacity: 0;
+      animation: fadeIn 2.5s ease forwards;
+      cursor: default;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    h1:active {
+      transform: scale(1.05);
+      opacity: 0.85;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 4rem;
+        letter-spacing: 0.15em;
+      }
     }
   </style>
 </head>
